@@ -71,3 +71,26 @@
                 });
             }
         });
+
+        // Delete a todo
+        $('.deleteBtn').on('click', function () {
+            const id = $(this).data('id');
+            $.ajax({
+                url: '/todos/' + id,
+                type: 'DELETE',
+                success: function () {
+                    location.reload(); // Reload to show updated list
+                }
+            });
+        });
+// Delete a todo
+        $('.deleteBtn').on('click', function () {
+            const id = $(this).data('id');
+            $.ajax({
+                url: '/todos/' + id,
+                type: 'DELETE',
+                success: function () {
+                    location.reload(); // Reload to show updated list
+                }
+            });
+        });
