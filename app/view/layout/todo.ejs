@@ -48,3 +48,26 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Add new todo
+        $('#addTodoForm').on('submit', function (e) {
+            e.preventDefault();
+            const task = $('#newTask').val().trim();
+            if (task) {
+                $.ajax({
+                    url: '/todos',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ task: task }),
+                    success: function (newTodo) {
+                        location.reload(); // Reload to show the new todo
+                    },
+                    error: function (error) {
+                        console.error("Error adding task:", error.responseText);
+                    }
+                });
+            }
+        });
