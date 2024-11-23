@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pupuk</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <!-- Include navbar -->
+    <%- include('../partials/navbar') %>
+
+    <h1>Edit Pupuk</h1>
+    <form action="/ArrPupuk/<%= Pupuk.id %>?_method=PUT" method="POST">
+        <label for="name">Nama:</label>
+        <input type="text" name="name" id="name" value="<%= Pupuk.name %>" required>
+        <br>
+        <label for="merk">merk:</label>
+        <input type="text" name="Pupuk" id="species" value="<%= Pupuk.species %>" required>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/ArrPupuk">Kembali</a>
+</body>
+</html>

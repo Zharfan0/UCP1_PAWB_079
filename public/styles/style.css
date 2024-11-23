@@ -1,0 +1,27 @@
+/* File CSS untuk styling navbar */
+nav {
+    background-color: #dbdbdb;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: rgb(97, 97, 97);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #2b2b2b;
+    color: rgb(213, 213, 213);
+}
