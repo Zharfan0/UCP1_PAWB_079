@@ -11,3 +11,18 @@
             </div>
         </div>
     </form>
+
+    <!-- List of Todos -->
+    <ul id="todoList" class="list-group">
+        <% todos.forEach(todo=> { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="<%= todo.completed ? 'completed' : '' %>">
+                    <%= todo.task %>
+                </span>
+                <div>
+                    <button class="btn btn-sm btn-success mr-2 editBtn" data-id="<%= todo.id %>">Edit</button>
+                    <button class="btn btn-sm btn-danger deleteBtn" data-id="<%= todo.id %>">Delete</button>
+                </div>
+            </li>
+            <% }); %>
+    </ul>
