@@ -16,7 +16,7 @@
         <% pupuk.forEach(animal => { %>
             <li>
                 <%= animal.name %> (<%= animal.species %>)
-                <a href="app\view\pupuk\edit.ejs">Edit</a>
+                <a href="/app/view/pupuk/edit.ejs">Edit</a>
                 <form action="/pupuk/<%= animal.id %>?_method=DELETE" method="POST" style="display: inline;">
                     <button type="submit">Hapus</button>
                 </form>
