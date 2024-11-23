@@ -94,3 +94,12 @@
                 }
             });
         });
+        
+// Show edit modal with the current task
+let editId;
+        $('.editBtn').on('click', function () {
+            editId = $(this).data('id');
+            const currentTask = $(this).closest('li').find('span').text();
+            $('#editTask').val(currentTask);
+            $('#editModal').modal('show');
+        });
