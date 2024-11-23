@@ -94,7 +94,7 @@
                 }
             });
         });
-        
+
 // Show edit modal with the current task
 let editId;
         $('.editBtn').on('click', function () {
@@ -103,3 +103,22 @@ let editId;
             $('#editTask').val(currentTask);
             $('#editModal').modal('show');
         });
+
+        // Update todo on form submission
+        $('#editTodoForm').on('submit', function (e) {
+            e.preventDefault();
+            const task = $('#editTask').val().trim();
+            if (task) {
+                $.ajax({
+                    url: '/todos/' + editId,
+                    type: 'PUT',
+                    data: JSON.stringify({ task: task, completed: false }),
+                    contentType: 'application/json',
+                    success: function () {
+                        location.reload(); // Reload to show the updated todo
+                    }
+                });
+            }
+        });
+    });
+</script>
